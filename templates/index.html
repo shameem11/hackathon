@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Phishing Checker</title>
+</head>
+<body>
+    <h1>Phishing Email Checker</h1>
+    <ul>
+        {% for email in emails %}
+            <li>
+                <strong>From:</strong> {{ email['from'] }}<br>
+                <strong>Body:</strong> {{ email['body'] }}<br>
+                <strong>Phishing Status:</strong> {% if email['is_phishing'] %} Phishing Detected {% else %} Safe {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
